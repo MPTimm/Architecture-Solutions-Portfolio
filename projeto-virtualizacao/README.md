@@ -23,11 +23,15 @@ graph LR
     end
 
     subgraph Infraestrutura_Modernizada [Infraestrutura Modernizada]
-      Srv3[Server Legado] c1@--Cluster--> Srv2[Server adicional]
-      VM1[VM1] e1@ ==> Srv2
-      VM2[VM2] e2@ ==> Srv2
-      VM3[VM3] e3@ ==> Srv3
-      VM4[VM4] e4@ ==> Srv3
+        subgraph Hypervisor
+            subgraph Cluster
+                Srv3[Server Legado] --- Srv2[Server adicional]
+            end
+        end
+      VM1[VM1] e1@ ==> Hypervisor
+      VM2[VM2] e2@ ==> Hypervisor
+      VM3[VM3] e3@ ==> Hypervisor
+      VM4[VM4] e4@ ==> Hypervisor
 
       e1@{ animate: true }
       e2@{ animate: true }
@@ -37,5 +41,7 @@ graph LR
 
     Infraestrutura_Legada --> Infraestrutura_Modernizada
 
-  style Infraestrutura_Legada fill:#A9A9A9,stroke:#333,stroke-width:2px
-  style Infraestrutura_Modernizada fill:#FFFAFA,stroke:#333,stroke-width:2px, color: black
+style Infraestrutura_Legada fill:#A9A9A9,stroke:#333,stroke-width:2px
+style Infraestrutura_Modernizada fill:#FFFAFA,stroke:#333,stroke-width:2px, color: black
+style Hypervisor fill:#00FF7F, stroke:#333, stroke-width:2px, color:black
+style Cluster fill:#4682B4, stroke:#333, stroke-width:2px, color:white
