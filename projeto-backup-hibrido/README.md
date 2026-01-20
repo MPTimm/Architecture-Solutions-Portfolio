@@ -33,6 +33,6 @@ subgraph Cloud [Provedor de Nuvem]
         Compute[Instâncias de Recuperação]
     end
 
-style Data_Center_Local fill:#f9f,stroke:#333,stroke-width:2px
-style Cloud fill:#bbf,stroke:#333,stroke-width:2px
+style Data_Center_Local fill:#07b570,stroke:#333,stroke-width:2px
+style Cloud fill:#bbf,stroke:#333,stroke-width:2px, color: black
 
